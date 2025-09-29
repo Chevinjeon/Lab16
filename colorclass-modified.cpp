@@ -61,3 +61,40 @@ public:
                   << ")" << std::endl;
     }
 };
+
+
+// --------------------- Main ---------------------
+int main() {
+    try {
+        std::cout << "== Demonstrating different constructors ==" << std::endl;
+
+        // Default constructor → black
+        Color c1;
+        c1.print();
+
+        // Partial constructor → red only
+        Color c2(200); 
+        c2.print();
+
+        // Partial constructor → red + green
+        Color c3(100, 150);
+        c3.print();
+
+        // Full constructor → full RGB
+        Color c4(123, 45, 67);
+        c4.print();
+
+        // Predefined “named colors”
+        Color red(255, 0, 0);
+        Color green(0, 255, 0);
+        Color blue(0, 0, 255);
+        red.print();
+        green.print();
+        blue.print();
+
+    } catch (const std::exception &ex) {
+        std::cerr << "Error: " << ex.what() << std::endl;
+        return 1;
+    }
+    return 0;
+}
